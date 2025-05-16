@@ -13,6 +13,11 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  background-color: antiquewhite;
+  max-width: 2000px;
+  margin: auto;
+}
 
 .sticky {
   position: fixed;
@@ -207,4 +212,5 @@ button {
  background-position: top;
  
 }
+
 }

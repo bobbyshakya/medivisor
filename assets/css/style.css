@@ -1,0 +1,210 @@
+.owl-item {
+  width: 128.906px;
+  margin-right: 10px;
+  background: powderblue;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+ 
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 50;
+  animation: slideDown 0.3s ease-in-out forwards;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Position nav absolutely to the left and right of the carousel */
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-40%);
+  pointer-events: none; /* allow clicks only on buttons */
+}
+
+/* Style individual nav buttons */
+.owl-carousel .owl-nav button.owl-prev{
+  left: -50px !important;
+   position: absolute;
+}
+.owl-carousel .owl-nav button.owl-next{
+  right: -50px;
+   position: absolute;
+}
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  background-color: #E22026;
+  
+  width: 40px;
+  color: #fff;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all; /* enable clicking */
+  border: none;
+  transition: 0.3s ease;
+}
+
+/* Optional hover effect */
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover {
+  background-color: #ccc;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.bg-shadow {
+  background-image: url(/assets/images/banner-bg.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-banner {
+  background-image: url(/assets/images/banner-1.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.bg-premium-section {
+  background-image: url(/assets/images/date-treatment-with-copy-space_23-2148551054.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.montserrat-font {
+    font-family: "Poppins", sans-serif;
+ 
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}
+
+
+.owl-item {
+  background: none;
+}
+
+.partner-logo {
+  width: 150px;
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0%) grayscale(100%);
+  transition: filter 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partner-logo:hover {
+  filter: brightness(20%) grayscale(80%);
+}
+
+.svg-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e11d48' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.image-hover {
+  transition: transform 0.7s ease-in-out;
+}
+
+.card-hover:hover .image-hover {
+  transform: scale(1.1);
+}
+
+button {
+  font-weight: 600 !important;
+}
+
+/* .features-hover {
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card-hover:hover .features-hover {
+      max-height: 200px;
+      opacity: 1;
+    } */
+@media (max-width: 768px) {
+  
+  .owl-carousel .owl-nav button.owl-prev{
+  left: 70% !important;
+   position: absolute;
+}
+.owl-carousel .owl-nav button.owl-next{
+  right:0px;
+   position: absolute;
+}
+.owl-carousel .owl-nav {
+  position: absolute;
+  bottom: 12%;
+  top:auto
+}
+.bg-shadow{
+ background-position: top;
+ 
+}
+}

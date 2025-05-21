@@ -1,0 +1,426 @@
+*,
+.montserrat-font {
+  font-family: Poppins, sans-serif
+}
+
+.owl-item {
+  width: 128.906px;
+  margin-right: 10px
+}
+
+* {
+  font-weight: 400;
+  font-style: normal
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  background-color: #faebd7;
+  max-width: 2000px;
+  margin: auto
+}
+ .modal-enter-active, .modal-leave-active {
+            transition: opacity 0.3s ease;
+        }
+        .modal-enter-from, .modal-leave-to {
+            opacity: 0;
+        }
+        .modal-content-enter-active, .modal-content-leave-active {
+            transition: transform 0.3s ease;
+        }
+        .modal-content-enter-from, .modal-content-leave-to {
+            transform: translateY(-20px);
+        }
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 50;
+  animation: .3s ease-in-out forwards slideDown;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1)
+}
+
+.bg-banner,
+.bg-premium-section,
+.bg-shadow {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-40%);
+  pointer-events: none
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: -50px !important;
+  position: absolute
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: -50px;
+  position: absolute
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+  background-color: #e22026;
+  width: 40px;
+  color: #fff;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  border: none;
+  transition: .3s
+}
+
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:hover {
+  background-color: #ccc
+}
+
+/* Base styles for the marquee container */
+.logo-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  /* Hides content outside the container */
+  white-space: nowrap;
+  /* Keeps all logo items on a single line */
+  position: relative;
+}
+
+/* The content that scrolls */
+.logo-scroll-content {
+  display: inline-block;
+  /* Allows items to flow horizontally */
+  animation: scrollLogos 30s linear infinite;
+  /* Customize duration for speed */
+  min-width: fit-content;
+  /* Allows content to determine its own width */
+}
+
+/* Pause animation on hover (optional) */
+.logo-scroll-container:hover .logo-scroll-content {
+  animation-play-state: paused;
+}
+
+/* Individual logo item styling not directly covered by Tailwind utilities */
+.logo-item {
+  display: inline-flex;
+  align-items: center;
+  /* Vertically center content */
+  justify-content: center;
+  /* Horizontally center content */
+  vertical-align: middle;
+  /* Align items nicely in the inline flow */
+}
+
+/* The partner logo image itself */
+.partner-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  /* Ensures logo fits within its container, preserving aspect ratio */
+}
+
+/* Keyframe animation for continuous scrolling */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* Scrolls exactly half the total content width */
+  }
+}
+
+/* Responsive adjustments for logo item width, height, and margin */
+@media (max-width: 639px) {
+
+  /* Small screens (sm breakpoint equivalent) */
+  .logo-item {
+    width: 100px;
+    /* Smaller fixed width */
+    height: 70px;
+    /* Smaller fixed height */
+    margin-right: 15px;
+    /* Reduced margin */
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+
+  /* Medium screens (md breakpoint equivalent) */
+  .logo-item {
+    width: 120px;
+    /* Medium fixed width */
+    height: 80px;
+    /* Medium fixed height */
+    margin-right: 25px;
+    /* Adjusted margin */
+  }
+}
+
+/* Default for larger screens */
+@media (min-width: 768px) {
+
+  /* md breakpoint and up */
+  .logo-item {
+    width: 140px;
+    /* Consistent fixed width */
+    height: 96px;
+    /* Consistent fixed height (h-24 equivalent) */
+    margin-right: 10px;
+    /* Consistent margin (like original gap-4) */
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+.bg-shadow {
+  background: #000000;
+  background: linear-gradient(3deg, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.2) 68%);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.bg-banner {
+  background-image: url(/assets/images/bannner-1.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.fade-in {
+  animation: .4s ease-out fadeIn
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(.95)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+.bg-premium-section {
+  background-image: url(/assets/images/date-treatment-with-copy-space_23-2148551054.jpg);
+  height: 100%;
+  background-position: center
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600
+}
+
+.owl-item {
+  background: 0 0
+}
+
+.partner-logo {
+  width: 150px;
+  height: 80px;
+  object-fit: contain;
+
+  transition: filter .3s;
+  margin-left: auto;
+  margin-right: auto
+}
+
+/* .partner-logo:hover {
+  filter: brightness(20%) grayscale(80%)
+} */
+
+.svg-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e11d48' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat
+}
+
+.card-hover {
+  transition: .3s
+}
+
+.card-hover:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25)
+}
+
+.image-hover {
+  transition: transform .7s ease-in-out
+}
+
+.card-hover:hover .image-hover {
+  transform: scale(1.1)
+}
+
+button {
+  font-weight: 600 !important
+}
+
+
+
+.custom-carousel .custom-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.custom-carousel img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 23%, rgba(0, 0, 0, 0.27) 40%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.custom-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+  background: #E22026;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+  background-color: #74BF44;
+  transform: scale(1.1);
+}
+
+
+
+.custom-prev-btn svg,
+.custom-next-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff;
+}
+
+.custom-prev-btn:hover svg,
+.custom-next-btn:hover svg {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .custom-carousel img {
+    height: 250px;
+  }
+}
+
+
+@media (max-width:768px) {
+  .owl-carousel .owl-nav button.owl-prev {
+    left: 70% !important;
+    position: absolute
+  }
+
+  .owl-carousel .owl-nav button.owl-next {
+    right: 0;
+    position: absolute
+  }
+
+  .custom-carousel .owl-nav {
+    margin-top: 5px;
+    position: absolute;
+    bottom: -2% !important;
+    top: auto
+  }
+
+  .owl-carousel .owl-nav {
+    position: absolute;
+    bottom: 12%;
+    top: auto
+  }
+
+  .owl-carousel .owl-nav {
+    position: absolute;
+    bottom: 12%;
+    top: auto
+  }
+
+  .bg-shadow {
+    background-color: black;
+    background-size: cover;
+    opacity: 0.6;
+
+    background-position: top;
+  }
+
+  .bg-banner {
+    background-size: cover;
+    background-position-y: top;
+    background-image: url(/assets/images/Mobile-web-banner-min.png);
+
+    background-position: top;
+  }
+
+  .hidden-icon {
+    display: none !important;
+  }
+
+}

@@ -29,7 +29,7 @@
   <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css>
   <link rel=preconnect href=https://fonts.googleapis.com>
   <!-- Scripts -->
-   <script src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
@@ -1761,47 +1761,57 @@
                 </p>
               </div>
               <div class="md:p-6 m-3 pt-4">
-                <form id="consultationForm" class="space-y-3">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <input placeholder="Full Name" name="fullName" required
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
-                    <input type="email" placeholder="Email Address" name="email" required
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <input type="tel" placeholder="Phone Number (WhatsApp preferred)" name="phoneNumber"
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
-                    <input placeholder="Country (e.g. Nigeria, Uganda)" name="country"
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
-                  </div>
-                  <textarea placeholder="Describe your medical concern..." name="medicalConcern" rows="5" required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out resize-y placeholder-gray-500"></textarea>
-                  <div id="drop-area"
-                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
-                    <input type="file" id="fileElem" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
-                    <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
-                      <i
-                        class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
-                      <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">Drag
-                        & Drop your files
-                        here, or <span class="underline">click to
-                          browse</span>
-                      </p>
-                      <p class="text-sm text-gray-500 mt-1">Supports images,
-                        PDFs, Word documents (Max 5 files, 5MB
-                        each, total 20MB)
-                      </p>
-                    </label>
-                    <div id="file-previews"
-                      class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
-                    </div>
-                  </div>
-                  <button type="submit"
-                    class="bg-[#E22026] w-full text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105"
-                    aria-label="Request Consultation">
-                    Request Consultation
-                  </button>
-                </form>
+               <form id="consultationForm" class="space-y-3" action="https://api.web3forms.com/submit" method="POST">
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+  <!-- Honeypot to prevent spam -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <input placeholder="Full Name" name="fullName" required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
+    <input type="email" placeholder="Email Address" name="email" required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <input type="tel" placeholder="Phone Number (WhatsApp preferred)" name="phoneNumber" required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
+    <input placeholder="Country (e.g. Nigeria, Uganda)" name="country" required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out placeholder-gray-500">
+  </div>
+
+  <textarea placeholder="Describe your medical concern..." name="medicalConcern" rows="5" required
+    class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out resize-y placeholder-gray-500"></textarea>
+
+  <!-- File Upload Section (Not submitted to Web3Forms) -->
+  <!-- <div id="drop-area"
+    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
+    <input type="file" id="fileElem" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
+    <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
+      <i class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
+      <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">
+        Drag & Drop your files here, or <span class="underline">click to browse</span>
+      </p>
+      <p class="text-sm text-gray-500 mt-1">Supports images, PDFs, Word documents (Max 5 files, 5MB each, total 20MB)</p>
+    </label>
+    <div id="file-previews"
+      class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
+    </div>
+  </div> -->
+
+  <!-- Submit Button -->
+  <button type="submit"
+    class="bg-[#E22026] w-full text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105"
+    aria-label="Request Consultation">
+    Request Consultation
+  </button>
+
+  <!-- Success/Error Message Placeholder -->
+  <div id="form-messages" class="text-sm mt-3"></div>
+</form>
+
               </div>
             </div>
           </div>
@@ -1913,63 +1923,61 @@
     </div>
   </footer>
   <div id=contactModal class="fixed inset-0 z-50 bg-black/70 bg-opacity-60 hidden items-center justify-center px-4">
-   <div class="bg-white w-full max-w-2xl rounded-md shadow-sm relative p-8 fade-in">
-    <button id=closeModalBtn
+    <div class="bg-white w-full max-w-2xl rounded-md shadow-sm relative p-8 fade-in">
+      <button id=closeModalBtn
         class="absolute top-4 z-50 right-4 text-gray-400 hover:text-[#E22026] text-2xl focus:outline-none"
         aria-label="Close Modal">
         <i class="fas fa-times-circle" aria-hidden=true></i>
-    </button>
-    <h3 class="text-3xl font-bold text-[#E22026] mb-2">Medivisor India
+      </button>
+      <h3 class="text-3xl font-bold text-[#E22026] mb-2">Medivisor India
         Treatment
-    </h3>
-    <p class="text-gray-600 mb-6">Providing advanced medical care in India
+      </h3>
+      <p class="text-gray-600 mb-6">Providing advanced medical care in India
         for African patients.
-    </p>
-    <form action="https://formspree.io/f/mjkwdwlr" method="POST" class=space-y-4>
-        
+      </p>
+      <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <input type="hidden" name="access_key" value="633d9e7c-a834-4e17-85b5-6254683066a9">
 
         <div class="flex flex-col md:flex-row gap-4">
-            <input placeholder="Full Name" required
-                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
-            <input type=email placeholder="Email Address" required
-                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
+          <input name="name" placeholder="Full Name" required
+            class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
+          <input name="email" type="email" placeholder="Email Address" required
+            class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
         </div>
+
         <div class="flex flex-col md:flex-row gap-4">
-            <input type=tel placeholder="Phone (WhatsApp)" required
-                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
-            <input placeholder="Your Country" required
-                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
+          <input name="phone" type="tel" placeholder="Phone (WhatsApp)" required
+            class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
+          <input name="country" placeholder="Your Country" required
+            class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none">
         </div>
-        <textarea placeholder="Describe your health issue..." rows=4 required
-            class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"></textarea>
-        <div id="drop-area"
-            class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
-            <input type="file" id="fileElem" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
-            <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
-                <i
-                    class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
-                <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">Drag
-                    & Drop your files
-                    here, or <span class="underline">click to
-                        browse</span>
-                </p>
-                <p class="text-sm text-gray-500 mt-1">Supports images,
-                    PDFs, Word documents (Max 5 files, 5MB
-                    each, total 20MB)
-                </p>
-            </label>
-            <div id="file-previews"
-                class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
-            </div>
+
+        <textarea name="message" placeholder="Describe your health issue..." rows="4" required
+          class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+
+        <!-- <div id="drop-area"
+        class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
+        <input type="file" id="fileElem" name="files[]" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
+        <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
+            <i class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
+            <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">Drag & Drop your files
+                here, or <span class="underline">click to browse</span>
+            </p>
+            <p class="text-sm text-gray-500 mt-1">Supports images, PDFs, Word documents (Max 5 files, 5MB each, total 20MB)</p>
+        </label>
+        <div id="file-previews"
+            class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
         </div>
-        <button type=submit
-            class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base"
-            aria-label="Send Request">
-            <i class="fas fa-paper-plane mr-2" aria-hidden=true></i> Send
-            Request
+    </div> -->
+
+        <button type="submit"
+          class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base"
+          aria-label="Send Request">
+          <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i> Send Request
         </button>
-    </form>
-</div>
+      </form>
+
+    </div>
   </div>
   <script src=https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js defer></script>
   <script src=https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js defer></script>

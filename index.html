@@ -173,13 +173,13 @@
     </nav>
   </header>
   <main>
-    <section class="relative h-[calc(100vh-50px)] overflow-hidden py-10" id=home aria-label="Hero Section">
+    <section class="relative md:-[calc(100vh-50px)] overflow-hidden md:py-10" id=home aria-label="Hero Section">
       <div class="absolute inset-0 z-20 bg-cover bg-center bg-shadow"></div>
       <div class="absolute inset-0 z-10 bg-banner"></div>
       <div
         class="relative z-30 container mx-auto px-4 md:pt-10 grid grid-cols-1 md:grid-cols-12 items-end md:items-center gap-3 h-full">
         <div
-          class="order-1 md:order-1 mt-72 md:mt-0 text-white  relative md:col-span-7 z-40 h-full w-full flex items-end">
+          class="order-1 md:order-1 mt-72  md:mt-0 text-white  relative md:col-span-7 z-40 h-full w-full flex items-end">
           <div class=p->
             <h1 class="text-2xl md:text-4xl lg:text-5xl leading-tight mb-2 text-center md:text-left uppercase">
               <span class="block font-bold" style="font-weight:600">
@@ -255,8 +255,8 @@
       </div>
     </section>
 
-    <section id="Partners" class="py-10 md:py-4 overflow-hidden bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="Partners" class="py-4 md:py-4 overflow-hidden bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div class="logo-scroll-container py-5">
           <div class="logo-scroll-content">
@@ -425,7 +425,7 @@
 
     <section class="w-full bg-gray-50 py-10 md:py-20">
       <div class="container mx-auto px-4 ">
-        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden md:flex md:items-center p-8 md:p-12 lg:p-16
+        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden md:flex md:items-center p-4 md:p-12 lg:p-16
                         transform transition-all duration-500 border border-gray-100 hover:shadow-sm
                         ">
           <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50 z-0"></div>
@@ -436,22 +436,21 @@
                                         transform transition-transform duration-500 ">
             <a target="_blank" href="https://maps.app.goo.gl/rta8tndN9P2yRD4p9">
 
-
-              <div class="absolute -bottom-4 -right-4 bg-[#74BF44] text-white text-xs md:text-sm px-4 py-2 rounded-lg shadow-md rotate-2
-                                        transform transition-transform duration-300 hover:scale-110 hover:rotate-0">
+              <div class="absolute -top-4 -left-4 z-50 bg-[#74BF44] text-white text-xs md:text-sm px-4 py-2 rounded-lg shadow-md 
+                                        transform transition-transform duration-300 hover:scale-110 ">
                 <i class="fas fa-map-marker-alt mr-1"></i> Mauritius Office
               </div>
             </a>
           </div>
 
           <div class="md:w-1/2 lg:w-3/5 text-center md:text-left relative z-10">
-            <h3 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2 leading-snug">
+            <h3 class="text-2xl md:text-4xl font-bold text-gray-900 md:mb-2 leading-snug">
               <i
-                class="fas fa-lightbulb text-[#E22026] mr-3 text-4xl transition-transform duration-300 hover:scale-110"></i>
+                class="fas fa-lightbulb text-[#E22026] mr-2 md:mr-3 text-2xl md:text-4xl transition-transform duration-300 hover:scale-110"></i>
               Did You Know?
 
             </h3>
-            <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-5">
+            <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-2 md:mb-5">
               Medivisor India Treatment has an <strong class=" font-bold">Information and Assistance
                 Centre in Mauritius!</strong>
             </p>
@@ -474,19 +473,21 @@
                 class="text-[#E22026] hover:underline ml-3 font-bold text-lg md:text-xl transition-colors duration-300">+230
                 5828 5542</a>
             </div>
-            <a href="" id="pdf-trigger-button"
+            <div class="mb-5 md:mb-0">
+              <a className="" href id="pdf-trigger-button"
               class="bg-[#E22026] border border-red-200 text-white text-sm md:text-xl font-medium px-6 py-3 rounded-md cursor-pointer transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[#74BF44] hover:bg-gradient-to-l hover:shadow-xl origin-center">
               <span>Know More </span>
               <i class="fas fa-arrow-right ml-3"></i>
             </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="  bg-white to-gray-100 py-16 sm:py-24 relative">
+    <section class="  bg-white to-gray-100 py-10 md:py-24 relative">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-8 items-start">
-        <div class="relative lg:sticky top-20 flex justify-center lg:block">
+        <div class="relative lg:sticky md:top-20 flex justify-center lg:block">
           <div
             class="relative w-full max-w-md lg:max-w-none shadow-xl rounded-lg overflow-hidden border border-gray-200 bg-white group cursor-pointer"
             id="pdf-trigger">
@@ -495,34 +496,35 @@
 
           </div>
         </div>
-        <div class="lg:max-w-xl mb-12 lg:mb-0">
+        <div class="lg:max-w-xl my-4 lg:my-0">
           <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2 leading-snug">
             About Us
 
           </h2>
           <p class="text-base sm:text-base text-gray-700 mb-2 leading-relaxed">
-            <strong>Medivisor India Treatment</strong> is a trusted medical travel agency that
+            <strong>Medivisor India Treatment</strong> is a trusted medical
+            travel agency that
             assists international patients in
             accessing advanced, world-class medical care across India.
           </p>
           <p class="text-base sm:text-base text-gray-700 mb-2 leading-relaxed">
-            With over <strong>10 years of experience</strong>, we have successfully supported
+            With over <strong>10 years of experience</strong>, we have
+            successfully supported
             more than <strong>2,000 overseas patients,</strong>
-            maintaining an outstanding <strong>95%+ success and satisfaction rate.</strong></p>
+            maintaining an outstanding <strong>95%+ success and satisfaction
+              rate.</strong></p>
           <p class="text-base sm:text-base text-gray-700 mb-5 leading-relaxed">
 
             Our commitment to delivering exceptional service with compassion
             and professionalism has been recognized by
-            leading organisations such as the Indian Health Bureau and the
-            Mitra Foundation, who have acknowledged us as
+            leading organisations such as the <strong>Indian Health Bureau and the
+            Mitra Foundation,</strong> who have acknowledged us as
             one of the top healthcare service providers.
           </p>
 
         </div>
 
       </div>
-
-
 
     </section>
     <section class="relative bg-gray-50 py-10 md:py-20" id=Services aria-label="Services Section">
@@ -545,7 +547,7 @@
               <img src=/assets/images/services/quatation.jpg alt="Treatment Quotation"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Personalized Treatment Quotation
@@ -578,7 +580,7 @@
               <img src=/assets/images/services/visa.jpg alt="Visa Support"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Visa Assistance
@@ -611,7 +613,7 @@
               <img src=/assets/images/services/flight.jpg alt="Flight Booking"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Flight Ticket Booking
@@ -642,7 +644,7 @@
               <img src=/assets/images/services/hotel-accodomation.jpg alt="Hotel Accommodation"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Hotel Accommodation
@@ -673,7 +675,7 @@
               <img src=/assets/images/services/airport-pickup.jpg alt="Airport Pickup"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Airport Pick-up
@@ -703,7 +705,7 @@
               <img src=/assets/images/services/hotel-hospital-transfer.jpg alt="Hotel-Hospital Transfers"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Hotel-Hospital Transfers
@@ -735,7 +737,7 @@
               <img src=/assets/images/services/medical-support.jpg alt="On-ground Medical Assistance"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 On-Ground Medical Assistance
@@ -766,7 +768,7 @@
               <img src=/assets/images/services/post-treatment-recovery.jpg alt="Recovery Support"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Recovery Support
@@ -798,7 +800,7 @@
               <img src=/assets/images/services/concierge-lifestyle.jpg alt="Concierge Service"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Concierge Service
@@ -833,7 +835,7 @@
               <img src=/assets/images/services/ongoing-follow-up.jpg alt="Follow-up Care"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading=lazy>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
               <h3
                 class="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-[#E22026] transition-colors duration-300">
                 Follow-Up Care
@@ -902,8 +904,8 @@
         </div>
       </div>
     </section>
-    <section id="Stories" class="px-6 md:py-20 py-10 bg-white">
-      <div class="max-w-3xl text-center mx-auto ">
+    <section id="Stories" class="px-4 md:py-20 py-10 bg-white">
+      <div class="container text-center mx-auto ">
         <!-- Heading -->
         <div
           class="inline-block px-3 py-1  bg-red-100 text-[#E22026] rounded-full text-sm md:text-base leading-[20px] md:text-sm md:text-base font-semibold mb-5">
@@ -1069,8 +1071,8 @@
             process works:
           </p>
         </div>
-        <div class="grid md:grid-cols-4 h-full gap-6">
-          <div class="md:col-span-1 bg-white border border-green-100 rounded-md shadow-sm p-5 sticky top-20 h-fit z-10">
+        <div class="grid md:grid-cols-4 h-full gap-3 md:gap-6">
+          <div class="md:col-span-1 bg-white border border-green-100 rounded-md shadow-sm p-3 md:p-5 sticky top-20 h-fit z-10">
             <h3 class="text-xl font-semibold text-gray-800 mb-5 flex items-center">
               Steps
             </h3>
@@ -1081,7 +1083,7 @@
                 Get a Quote
               </button>
               <button id="btn-2" onclick="showStep(2)"
-                class="step-btn flex items-center gap-2 w-full px-3 py-2 rounded-md border hover:bg-[#E22026]/10 text-base text-gray-700 font-medium transition">
+                class="step-btn flex items-center gap-2 w-full px-2 md:px-3 py-2 rounded-md border hover:bg-[#E22026]/10 text-base text-gray-700 font-medium transition">
                 <i class="fa-solid hidden-icon fa-user-doctor text-[#E22026]"></i>
                 Talk to the Doctor
               </button>
@@ -1099,7 +1101,7 @@
           </div>
 
           <div class="md:col-span-3 gap-4">
-            <div id="step-1" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-6">
+            <div id="step-1" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-3 pt-3 md:p-6">
               <div class="flex items-center justify-between mb-3">
                 <h4 class="text-lg font-semibold text-gray-800">
                   <i class="fa-solid fa-file-invoice-dollar mr-1 text-[#E22026]"></i>
@@ -1129,7 +1131,7 @@
               </div>
             </div>
 
-            <div id="step-2" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-6 hidden">
+            <div id="step-2" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-3 pt-3 md:p-6 hidden">
               <div class="flex items-center justify-between mb-3">
                 <h4 class="text-lg font-semibold text-gray-800">
                   <i class="fa-solid fa-user-md mr-1 text-[#E22026]"></i>
@@ -1161,7 +1163,7 @@
               </div>
             </div>
 
-            <div id="step-3" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-6 hidden">
+            <div id="step-3" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-3 pt-3 md:p-6 hidden">
               <div class="flex items-center justify-between mb-3">
                 <h4 class="text-lg font-semibold text-gray-800">
                   <i class="fa-solid fa-plane mr-1 text-[#E22026]"></i> Book
@@ -1196,7 +1198,7 @@
               </div>
             </div>
 
-            <div id="step-4" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-6 hidden">
+            <div id="step-4" class="step-content h-full bg-white border border-gray-200 rounded-md shadow p-3 pt-3 md:p-6 hidden">
               <div class="flex items-center justify-between mb-3">
                 <h4 class="text-lg font-semibold text-gray-800">
                   <i class="fa-solid fa-plane-arrival mr-1 text-[#E22026]"></i>
@@ -1322,8 +1324,6 @@
       </div>
     </section>
 
-
-
     <!-- Custom Scrollbar -->
     <style>
       .custom-scrollbar::-webkit-scrollbar {
@@ -1336,7 +1336,7 @@
       }
     </style>
 
-    <section class="overflow-hidden bg-gray-50 md:py-20 py-10 pb-16">
+    <section class="overflow-hidden bg-white md:py-20 py-10 pb-16">
       <div class="container mx-auto px-4 md:px-8">
         <div class="text-center mb-6 max-w-3xl mx-auto">
           <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2 leading-snug">We
@@ -1477,7 +1477,7 @@
       </div>
     </section> -->
 
-    <section class=" bg-white py-16 px-6 md:px-16">
+    <section class=" bg-gray-50 py-16 px-6 md:px-16">
       <div class="max-w-7xl mx-auto">
         <!-- Section Title -->
         <div class="text-center mb-10">
@@ -1617,7 +1617,7 @@
       </div>
     </section>
 
-    <section class="md:py-20 py-10 bg-gray-50 " id=Contact aria-label="Contact Section">
+    <section class="md:py-20 py-10 bg-white " id=Contact aria-label="Contact Section">
       <div class="container mx-auto px-4">
         <div class="text-center mb-8 md:mb-6">
           <div
@@ -1651,47 +1651,57 @@
             </div>
             <div class="rounded-lg border border-red-200 bg-white text-gray-800 shadow-lg overflow-hidden">
               <div class="bg-[#E22026] text-white p-3">
-                <h3 class="text-2xl font-bold text-white cursor-pointer mb-0">Our Global Offices</h3>
+                <h3 class="text-2xl font-bold text-white cursor-pointer mb-0">Our
+                  Global Offices</h3>
               </div>
-              <div class="p-6">
-                <ul class="text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              <div class="md:p-6 p-3">
+                <ul class="text-gray-700 grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-3 md:gap-y-6">
                   <li class="flex items-start">
                     <i class="fas fa-phone-alt text-[#E22026] mr-3 mt-0.5 text-xl" aria-hidden="true"></i>
                     <div>
-                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">India Office:</strong>
+                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">India
+                        Office:</strong>
                       <a href="tel:+919643015697"
-                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+91 96430
+                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+91
+                        96430
                         15697</a>
                     </div>
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-phone-alt text-[#E22026] mr-3 mt-0.5 text-xl" aria-hidden="true"></i>
                     <div>
-                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Mauritius Office:</strong>
+                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Mauritius
+                        Office:</strong>
                       <a href="tel:+23058285542"
-                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+230 5828
+                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+230
+                        5828
                         5542</a>
                     </div>
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-phone-alt text-[#E22026] mr-3 mt-0.5 text-xl" aria-hidden="true"></i>
                     <div>
-                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Fiji Office:</strong>
+                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Fiji
+                        Office:</strong>
                       <a href="tel:+6799470588"
-                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679 9470588
+                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679
+                        9470588
                         (Suva)</a>
                       <a href="tel:+6799470527"
-                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679 9470527
+                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679
+                        9470527
                         (Lautoka)</a>
                       <a href="tel:+6799789990"
-                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679 9789990
+                        class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+679
+                        9789990
                         (Labasa)</a>
                     </div>
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-phone-alt text-[#E22026] mr-3 mt-0.5 text-xl" aria-hidden="true"></i>
                     <div>
-                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Vanuatu Office:</strong>
+                      <strong class="text-[#E22026] font-semibold text-lg block mb-1">Vanuatu
+                        Office:</strong>
                       <a href="tel:+6787627430"
                         class="text-gray-800 hover:text-[#E22026] transition duration-300 block text-base">+678
                         7627430</a>
@@ -1707,7 +1717,7 @@
                     </div>
                   </li>
 
-                  <li class="flex items-start md:col-span-2 justify-center md:justify-start">
+                  <li class="flex items-start md:col-span-2 justify- md:justify-start">
                     <i class="fas fa-envelope text-[#E22026] mr-3 mt-0.5 text-xl" aria-hidden="true"></i>
                     <div>
                       <strong class="text-[#E22026] font-semibold text-lg block mb-1">Email:</strong>
@@ -1719,15 +1729,17 @@
               </div>
             </div>
           </div>
-          <div class="w-full max-w-4xl mx-auto">
+          <div class="w-full max-w-4xl mx-auto mt-5 md:mt-0">
             <div class="rounded-lg border border-gray-200 bg-white text-gray-800 shadow-xl overflow-hidden">
               <div class="p-5 border-b border-gray-200 bg-[#E22026] text-white">
-                <h3 class="text-2xl font-bold text-white cursor-pointer mb-0">How can we help you?</h3>
+                <h3 class="text-2xl font-bold text-white cursor-pointer mb-0">How
+                  can we help you?</h3>
                 <p class="text-white text-base opacity-90">
-                  Serving patients across Nigeria, Kenya, Ghana, Ethiopia & more.
+                  Serving patients across Nigeria, Kenya, Ghana, Ethiopia &
+                  more.
                 </p>
               </div>
-              <div class="p-6 pt-4">
+              <div class="md:p-6 m-3 pt-4">
                 <form id="consultationForm" class="space-y-3">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
                     <input placeholder="Full Name" name="fullName" required
@@ -1745,14 +1757,17 @@
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#E22026] focus:border-transparent outline-none transition duration-200 ease-in-out resize-y placeholder-gray-500"></textarea>
 
                   <div id="drop-area"
-                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#E22026] hover:bg-red-50 transition duration-300 ease-in-out group">
+                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
                     <input type="file" id="fileElem" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
                     <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
                       <i
-                        class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#E22026] mb-3 transition duration-300"></i>
-                      <p class="text-gray-700 text-lg group-hover:text-[#E22026] font-semibold">Drag & Drop your files
-                        here, or <span class="underline">click to browse</span></p>
-                      <p class="text-sm text-gray-500 mt-1">Supports images, PDFs, Word documents (Max 5 files, 5MB
+                        class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
+                      <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">Drag
+                        & Drop your files
+                        here, or <span class="underline">click to
+                          browse</span></p>
+                      <p class="text-sm text-gray-500 mt-1">Supports images,
+                        PDFs, Word documents (Max 5 files, 5MB
                         each, total 20MB)</p>
                     </label>
                     <div id="file-previews"
@@ -1769,167 +1784,7 @@
             </div>
           </div>
 
-          <script>
-            const dropArea = document.getElementById('drop-area');
-            const fileElem = document.getElementById('fileElem');
-            const filePreviewsContainer = document.getElementById('file-previews');
-            let files = []; // Array to store actual File objects
 
-            const MAX_FILES = 5;
-            const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
-            const TOTAL_MAX_SIZE = 20 * 1024 * 1024; // 20MB total
-
-            // --- Drag and Drop Visual Feedback ---
-            ['dragenter', 'dragover'].forEach(eventName => {
-              dropArea.addEventListener(eventName, () => dropArea.classList.add('border-[#E22026]', 'bg-red-100'), false);
-            });
-
-            ['dragleave', 'drop'].forEach(eventName => {
-              dropArea.addEventListener(eventName, () => dropArea.classList.remove('border-[#E22026]', 'bg-red-100'), false);
-            });
-
-            // Prevent default browser behavior for drag/drop (e.g., opening file)
-            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-              dropArea.addEventListener(eventName, e => {
-                e.preventDefault();
-                e.stopPropagation();
-              }, false);
-            });
-
-            // --- Handle File Selection ---
-            fileElem.addEventListener('change', (e) => handleFiles(e.target.files)); // Via click "browse"
-            dropArea.addEventListener('drop', (e) => handleFiles(e.dataTransfer.files)); // Via drag and drop
-
-            function handleFiles(newFiles) {
-              let filesToAdd = Array.from(newFiles);
-              let currentTotalSize = files.reduce((sum, file) => sum + file.size, 0);
-
-              filesToAdd.forEach(file => {
-                if (files.length >= MAX_FILES) {
-                  alert(`Maximum ${MAX_FILES} files allowed.`);
-                  return;
-                }
-                if (file.size > MAX_FILE_SIZE) {
-                  alert(`File "${file.name}" is too large. Max size is ${MAX_FILE_SIZE / (1024 * 1024)}MB.`);
-                  return;
-                }
-                if (currentTotalSize + file.size > TOTAL_MAX_SIZE) {
-                  alert(`Adding "${file.name}" would exceed the total maximum upload size of ${TOTAL_MAX_SIZE / (1024 * 1024)}MB.`);
-                  return;
-                }
-
-                // Check for duplicates before adding
-                if (files.some(existingFile => existingFile.name === file.name && existingFile.size === file.size)) {
-                  // console.log(`Skipping duplicate file: ${file.name}`);
-                  return;
-                }
-
-                files.push(file);
-                currentTotalSize += file.size; // Update total size
-                renderFilePreview(file);
-              });
-
-              // Clear the file input value to allow selecting the same file(s) again after removal
-              fileElem.value = '';
-            }
-
-            // --- Render File Previews ---
-            function renderFilePreview(file) {
-              const previewDiv = document.createElement('div');
-              previewDiv.className = 'file-preview relative bg-white rounded-md shadow-sm p-2 border border-gray-200 flex flex-col items-center justify-center h-28 group/item';
-              previewDiv.dataset.fileName = file.name; // Store filename for easy lookup
-
-              let fileIconHtml = '';
-              const fileNameTruncated = file.name.length > 15 ? file.name.substring(0, 12) + '...' + file.name.substring(file.name.lastIndexOf('.')) : file.name;
-
-              if (file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                  // Only display image if it's small enough to fit without distortion
-                  fileIconHtml = `<img src="${e.target.result}" alt="${file.name}" class="h-16 w-full object-contain rounded-md mb-1">`;
-                  previewDiv.querySelector('.icon-placeholder').innerHTML = fileIconHtml;
-                };
-                reader.readAsDataURL(file);
-                // Initial placeholder while image loads
-                fileIconHtml = `<i class="fas fa-spinner fa-spin text-4xl text-gray-400 mb-1"></i>`;
-              } else if (file.type === 'application/pdf') {
-                fileIconHtml = `<i class="fas fa-file-pdf text-4xl text-red-500 mb-1"></i>`;
-              } else if (file.type === 'application/msword' || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-                fileIconHtml = `<i class="fas fa-file-word text-4xl text-blue-600 mb-1"></i>`;
-              } else {
-                fileIconHtml = `<i class="fas fa-file text-4xl text-gray-500 mb-1"></i>`;
-              }
-
-              previewDiv.innerHTML = `
-                <div class="text-center icon-placeholder">
-                    ${fileIconHtml}
-                </div>
-                <p class="text-xs text-gray-700 truncate w-full px-1 mt-auto">${fileNameTruncated}</p>
-                <button type="button" class="remove-file-btn absolute top-1 right-1 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs opacity-0 group-hover/item:opacity-100 transition-opacity transform hover:scale-110" aria-label="Remove file">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-              filePreviewsContainer.appendChild(previewDiv);
-
-              // Attach event listener for the remove button
-              previewDiv.querySelector('.remove-file-btn').addEventListener('click', () => removeFile(file.name));
-            }
-
-            // --- Remove File Functionality ---
-            function removeFile(fileNameToRemove) {
-              // Filter out the file to be removed from the 'files' array
-              files = files.filter(file => file.name !== fileNameToRemove);
-
-              // Remove the corresponding preview element from the DOM
-              const previewToRemove = document.querySelector(`.file-preview[data-file-name="${fileNameToRemove}"]`);
-              if (previewToRemove) {
-                previewToRemove.remove();
-              }
-              // console.log("Files remaining:", files);
-            }
-
-            // --- Form Submission (Example) ---
-            document.getElementById('consultationForm').addEventListener('submit', function (event) {
-              event.preventDefault(); // Prevent default form submission
-
-              const formData = new FormData(this); // Collects all form inputs by their 'name' attribute
-
-              // Append each file to the FormData object
-              files.forEach((file, index) => {
-                formData.append(`documents[${index}]`, file); // Use 'documents[]' to allow multiple files under one name
-              });
-
-              // For demonstration, log FormData contents
-              console.log("Form Data submitted:");
-              for (let [key, value] of formData.entries()) {
-                if (value instanceof File) {
-                  console.log(`${key}: File Name: ${value.name}, Type: ${value.type}, Size: ${value.size} bytes`);
-                } else {
-                  console.log(`${key}: ${value}`);
-                }
-              }
-
-              alert('Form submitted successfully! Check console for FormData contents.');
-
-              // In a real application, you would send this FormData to your backend:
-              /*
-              fetch('/your-api-endpoint', {
-                  method: 'POST',
-                  body: formData
-              })
-              .then(response => response.json())
-              .then(data => {
-                  console.log('Success:', data);
-                  alert('Consultation request sent!');
-                  // Optionally clear the form or give success feedback
-              })
-              .catch(error => {
-                  console.error('Error:', error);
-                  alert('Failed to send consultation request.');
-              });
-              */
-            });
-          </script>
         </div>
         <div class="rounded-md overflow-hidden shadow-sm border border-gray-200 h-72">
           <iframe
@@ -2059,8 +1914,26 @@
         </div>
         <textarea placeholder="Describe your health issue..." rows=4 required
           class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+        <div id="drop-area"
+          class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer bg-gray-50 hover:border-[#77c047] hover:bg-[#77c047]/20 transition duration-300 ease-in-out group">
+          <input type="file" id="fileElem" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
+          <label for="fileElem" class="block text-gray-600 text-lg font-medium cursor-pointer">
+            <i
+              class="fas fa-cloud-upload-alt text-5xl text-gray-400 group-hover:text-[#77c047] mb-3 transition duration-300"></i>
+            <p class="text-gray-700 text-lg group-hover:text-[#77c047] font-semibold">Drag
+              & Drop your files
+              here, or <span class="underline">click to
+                browse</span></p>
+            <p class="text-sm text-gray-500 mt-1">Supports images,
+              PDFs, Word documents (Max 5 files, 5MB
+              each, total 20MB)</p>
+          </label>
+          <div id="file-previews"
+            class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
+          </div>
+        </div>
         <button type=submit
-          class="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition font-medium text-base"
+          class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base"
           aria-label="Send Request">
           <i class="fas fa-paper-plane mr-2" aria-hidden=true></i> Send
           Request
@@ -2232,6 +2105,167 @@
           closeModal();
         }
       });
+    });
+  </script>
+  <script>
+    const dropArea = document.getElementById('drop-area');
+    const fileElem = document.getElementById('fileElem');
+    const filePreviewsContainer = document.getElementById('file-previews');
+    let files = []; // Array to store actual File objects
+
+    const MAX_FILES = 5;
+    const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
+    const TOTAL_MAX_SIZE = 20 * 1024 * 1024; // 20MB total
+
+    // --- Drag and Drop Visual Feedback ---
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropArea.addEventListener(eventName, () => dropArea.classList.add('border-[#E22026]', 'bg-red-100'), false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, () => dropArea.classList.remove('border-[#E22026]', 'bg-red-100'), false);
+    });
+
+    // Prevent default browser behavior for drag/drop (e.g., opening file)
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+      }, false);
+    });
+
+    // --- Handle File Selection ---
+    fileElem.addEventListener('change', (e) => handleFiles(e.target.files)); // Via click "browse"
+    dropArea.addEventListener('drop', (e) => handleFiles(e.dataTransfer.files)); // Via drag and drop
+
+    function handleFiles(newFiles) {
+      let filesToAdd = Array.from(newFiles);
+      let currentTotalSize = files.reduce((sum, file) => sum + file.size, 0);
+
+      filesToAdd.forEach(file => {
+        if (files.length >= MAX_FILES) {
+          alert(`Maximum ${MAX_FILES} files allowed.`);
+          return;
+        }
+        if (file.size > MAX_FILE_SIZE) {
+          alert(`File "${file.name}" is too large. Max size is ${MAX_FILE_SIZE / (1024 * 1024)}MB.`);
+          return;
+        }
+        if (currentTotalSize + file.size > TOTAL_MAX_SIZE) {
+          alert(`Adding "${file.name}" would exceed the total maximum upload size of ${TOTAL_MAX_SIZE / (1024 * 1024)}MB.`);
+          return;
+        }
+
+        // Check for duplicates before adding
+        if (files.some(existingFile => existingFile.name === file.name && existingFile.size === file.size)) {
+          // console.log(`Skipping duplicate file: ${file.name}`);
+          return;
+        }
+
+        files.push(file);
+        currentTotalSize += file.size; // Update total size
+        renderFilePreview(file);
+      });
+
+      // Clear the file input value to allow selecting the same file(s) again after removal
+      fileElem.value = '';
+    }
+
+    // --- Render File Previews ---
+    function renderFilePreview(file) {
+      const previewDiv = document.createElement('div');
+      previewDiv.className = 'file-preview relative bg-white rounded-md shadow-sm p-2 border border-gray-200 flex flex-col items-center justify-center h-28 group/item';
+      previewDiv.dataset.fileName = file.name; // Store filename for easy lookup
+
+      let fileIconHtml = '';
+      const fileNameTruncated = file.name.length > 15 ? file.name.substring(0, 12) + '...' + file.name.substring(file.name.lastIndexOf('.')) : file.name;
+
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          // Only display image if it's small enough to fit without distortion
+          fileIconHtml = `<img src="${e.target.result}" alt="${file.name}" class="h-16 w-full object-contain rounded-md mb-1">`;
+          previewDiv.querySelector('.icon-placeholder').innerHTML = fileIconHtml;
+        };
+        reader.readAsDataURL(file);
+        // Initial placeholder while image loads
+        fileIconHtml = `<i class="fas fa-spinner fa-spin text-4xl text-gray-400 mb-1"></i>`;
+      } else if (file.type === 'application/pdf') {
+        fileIconHtml = `<i class="fas fa-file-pdf text-4xl text-red-500 mb-1"></i>`;
+      } else if (file.type === 'application/msword' || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+        fileIconHtml = `<i class="fas fa-file-word text-4xl text-blue-600 mb-1"></i>`;
+      } else {
+        fileIconHtml = `<i class="fas fa-file text-4xl text-gray-500 mb-1"></i>`;
+      }
+
+      previewDiv.innerHTML = `
+                <div class="text-center icon-placeholder">
+                    ${fileIconHtml}
+                </div>
+                <p class="text-xs text-gray-700 truncate w-full px-1 mt-auto">${fileNameTruncated}</p>
+                <button type="button" class="remove-file-btn absolute top-1 right-1 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs opacity-0 group-hover/item:opacity-100 transition-opacity transform hover:scale-110" aria-label="Remove file">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+      filePreviewsContainer.appendChild(previewDiv);
+
+      // Attach event listener for the remove button
+      previewDiv.querySelector('.remove-file-btn').addEventListener('click', () => removeFile(file.name));
+    }
+
+    // --- Remove File Functionality ---
+    function removeFile(fileNameToRemove) {
+      // Filter out the file to be removed from the 'files' array
+      files = files.filter(file => file.name !== fileNameToRemove);
+
+      // Remove the corresponding preview element from the DOM
+      const previewToRemove = document.querySelector(`.file-preview[data-file-name="${fileNameToRemove}"]`);
+      if (previewToRemove) {
+        previewToRemove.remove();
+      }
+      // console.log("Files remaining:", files);
+    }
+
+    // --- Form Submission (Example) ---
+    document.getElementById('consultationForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const formData = new FormData(this); // Collects all form inputs by their 'name' attribute
+
+      // Append each file to the FormData object
+      files.forEach((file, index) => {
+        formData.append(`documents[${index}]`, file); // Use 'documents[]' to allow multiple files under one name
+      });
+
+      // For demonstration, log FormData contents
+      console.log("Form Data submitted:");
+      for (let [key, value] of formData.entries()) {
+        if (value instanceof File) {
+          console.log(`${key}: File Name: ${value.name}, Type: ${value.type}, Size: ${value.size} bytes`);
+        } else {
+          console.log(`${key}: ${value}`);
+        }
+      }
+
+      alert('Form submitted successfully! Check console for FormData contents.');
+
+      // In a real application, you would send this FormData to your backend:
+      /*
+      fetch('/your-api-endpoint', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          alert('Consultation request sent!');
+          // Optionally clear the form or give success feedback
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('Failed to send consultation request.');
+      });
+      */
     });
   </script>
 </body>

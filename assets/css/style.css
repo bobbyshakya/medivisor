@@ -96,101 +96,64 @@ body {
 }
 
 /* Base styles for the marquee container */
+/* Custom CSS for the continuous auto-scroll */
+
+/* Hide scrollbar for all browsers */
+.logo-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
 .logo-scroll-container {
-  width: 100%;
-  overflow: hidden;
-  /* Hides content outside the container */
-  white-space: nowrap;
-  /* Keeps all logo items on a single line */
-  position: relative;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow: hidden; /* Important: Hides content outside the container */
+  position: relative; /* For absolute positioning of items if needed */
 }
 
-/* The content that scrolls */
+/* The content that scrolls automatically */
 .logo-scroll-content {
-  display: inline-block;
-  /* Allows items to flow horizontally */
-  animation: scrollLogos 30s linear infinite;
-  /* Customize duration for speed */
-  min-width: fit-content;
-  /* Allows content to determine its own width */
+  display: inline-flex; /* Allows items to flow horizontally with flex properties */
+  white-space: nowrap; /* Prevents items from wrapping */
+  /* Initial animation properties - these will be dynamically controlled by JS */
+  animation: autoScrollLogos var(--scroll-duration, 60s) linear infinite; /* Default duration, can be overridden */
+  animation-play-state: running; /* Start running by default */
+  min-width: max-content; /* Ensure the content takes up enough space */
+  /* gap is now handled by Tailwind's space-x on the parent logo-scroll-content if needed */
 }
 
-/* Pause animation on hover (optional) */
+/* Keyframe animation for continuous scrolling */
+@keyframes autoScrollLogos {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    /* Scrolls exactly half the total content width.
+       This assumes the .logo-scroll-content HTML is duplicated once. */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover (CSS fallback, JS will also manage) */
 .logo-scroll-container:hover .logo-scroll-content {
   animation-play-state: paused;
 }
 
-/* Individual logo item styling not directly covered by Tailwind utilities */
+/* Individual logo item styling already using Tailwind, just setting basic display */
 .logo-item {
-  display: inline-flex;
+  display: inline-flex; /* To center logo image within item */
   align-items: center;
-  /* Vertically center content */
   justify-content: center;
-  /* Horizontally center content */
-  vertical-align: middle;
-  /* Align items nicely in the inline flow */
+  flex-shrink: 0; /* Prevents items from shrinking */
+  /* Tailwind classes like p-4, rounded-md, shadow-sm, hover:shadow-lg, transition, transform, border already handle most of this */
 }
 
-/* The partner logo image itself */
 .partner-logo {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 80px; /* Consistent height for logos */
+  width: auto; /* Maintain aspect ratio */
   object-fit: contain;
-  /* Ensures logo fits within its container, preserving aspect ratio */
 }
 
-/* Keyframe animation for continuous scrolling */
-@keyframes scrollLogos {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-    /* Scrolls exactly half the total content width */
-  }
-}
-
-/* Responsive adjustments for logo item width, height, and margin */
-@media (max-width: 639px) {
-
-  /* Small screens (sm breakpoint equivalent) */
-  .logo-item {
-    width: 100px;
-    /* Smaller fixed width */
-    height: 70px;
-    /* Smaller fixed height */
-    margin-right: 15px;
-    /* Reduced margin */
-  }
-}
-
-@media (min-width: 640px) and (max-width: 767px) {
-
-  /* Medium screens (md breakpoint equivalent) */
-  .logo-item {
-    width: 120px;
-    /* Medium fixed width */
-    height: 80px;
-    /* Medium fixed height */
-    margin-right: 25px;
-    /* Adjusted margin */
-  }
-}
-
-/* Default for larger screens */
-@media (min-width: 768px) {
-
-  /* md breakpoint and up */
-  .logo-item {
-    width: 140px;
-    /* Consistent fixed width */
-    height: 96px;
-    /* Consistent fixed height (h-24 equivalent) */
-    margin-right: 10px;
-    /* Consistent margin (like original gap-4) */
-  }
-}
+/* Responsive adjustments for logo item width/height can be done via Tailwind utilities directly on .logo-item */
+/* Example: <div class="logo-item w-[100px] h-[70px] md:w-[120px] md:h-[80px] lg:w-[140px] lg:h-[96px] ..."> */
 
 @keyframes slideDown {
   from {

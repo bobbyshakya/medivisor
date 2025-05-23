@@ -20,7 +20,7 @@ html {
 body {
   background-color: #faebd7;
   max-width: 2000px;
-  margin: auto
+  margin: auto !important;
 }
  .modal-enter-active, .modal-leave-active {
             transition: opacity 0.3s ease;
@@ -370,6 +370,10 @@ button {
   .custom-carousel img {
     height: 250px;
   }
+  .custom-caption {
+  padding: 0.5rem;
+}
+
 }
 
 

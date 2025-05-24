@@ -107,7 +107,41 @@ body {
   scrollbar-width: none;  /* Firefox */
   overflow: hidden; /* Important: Hides content outside the container */
   position: relative; /* For absolute positioning of items if needed */
-}
+}    @media (min-width: 768px) {
+            .partner-cards-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem; /* Equivalent to gap-6 */
+            }
+            .partner-card {
+                display: flex;
+                flex-direction: column;
+                height: 100%; /* Ensure cards fill the height of their grid cell */
+            }
+            .partner-card .card-content {
+                flex-grow: 1; /* Allows content to expand and push footer down */
+                display: flex;
+                flex-direction: column;
+            }
+            .partner-card .card-description {
+                flex-grow: 1; /* Make the description fill available space */
+            }
+            .partner-card .card-footer {
+                margin-top: auto; /* Pushes the footer to the bottom */
+            }
+        }
+
+        /* Ensure sticky sidebar stays within its parent flow and scrolls independently if content overflows */
+        .sticky-sidebar-container {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 2rem; /* Equivalent to lg:top-8 */
+            align-self: flex-start;
+             max-height: calc(100vh +200px);
+            min-height: calc(100vh - 4rem); /* Adjust based on your header/footer or desired offset */
+            overflow-y: auto; /* Allows scrolling within this section if content is too long */
+            padding-bottom: 2rem; /* Add some padding at the bottom */
+        }
 
 /* The content that scrolls automatically */
 .logo-scroll-content {

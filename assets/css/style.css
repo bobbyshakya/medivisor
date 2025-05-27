@@ -1,5 +1,4 @@
-*,
-.montserrat-font {
+*, .montserrat-font {
   font-family: Poppins, sans-serif
 }
 
@@ -17,24 +16,28 @@ html {
   scroll-behavior: smooth
 }
 
-
 body {
   background-color: #faebd7;
   max-width: 2000px;
-  margin: auto !important;
+  margin: auto !important
 }
- .modal-enter-active, .modal-leave-active {
-            transition: opacity 0.3s ease;
-        }
-        .modal-enter-from, .modal-leave-to {
-            opacity: 0;
-        }
-        .modal-content-enter-active, .modal-content-leave-active {
-            transition: transform 0.3s ease;
-        }
-        .modal-content-enter-from, .modal-content-leave-to {
-            transform: translateY(-20px);
-        }
+
+.modal-enter-active, .modal-leave-active {
+  transition: opacity .3s ease
+}
+
+.modal-enter-from, .modal-leave-to {
+  opacity: 0
+}
+
+.modal-content-enter-active, .modal-content-leave-active {
+  transition: transform .3s ease
+}
+
+.modal-content-enter-from, .modal-content-leave-to {
+  transform: translateY(-20px)
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -46,148 +49,25 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1)
 }
 
-.bg-banner,
-.bg-premium-section,
-.bg-shadow {
+.bg-banner, .bg-premium-section, .bg-shadow {
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat
 }
 
-.owl-carousel .owl-nav {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-40%);
-  pointer-events: none
-}
-
-.owl-carousel .owl-nav button.owl-prev {
-  left: -50px !important;
-  position: absolute
-}
-
-.owl-carousel .owl-nav button.owl-next {
-  right: -50px;
-  position: absolute
-}
-
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev {
-  background-color: #e22026;
-  width: 40px;
-  color: #fff;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: all;
-  border: none;
-  transition: .3s
-}
-
-.owl-carousel .owl-nav button.owl-next:hover,
-.owl-carousel .owl-nav button.owl-prev:hover {
-  background-color: #ccc
-}
-
-/* Base styles for the marquee container */
-/* Custom CSS for the continuous auto-scroll */
-
-/* Hide scrollbar for all browsers */
 .logo-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
-}
-.logo-scroll-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  overflow: hidden; /* Important: Hides content outside the container */
-  position: relative; /* For absolute positioning of items if needed */
-}    @media (min-width: 768px) {
-            .partner-cards-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem; /* Equivalent to gap-6 */
-            }
-            .partner-card {
-                display: flex;
-                flex-direction: column;
-                height: 100%; /* Ensure cards fill the height of their grid cell */
-            }
-            .partner-card .card-content {
-                flex-grow: 1; /* Allows content to expand and push footer down */
-                display: flex;
-                flex-direction: column;
-            }
-            .partner-card .card-description {
-                flex-grow: 1; /* Make the description fill available space */
-            }
-            .partner-card .card-footer {
-                margin-top: auto; /* Pushes the footer to the bottom */
-            }
-        }
-
-        /* Ensure sticky sidebar stays within its parent flow and scrolls independently if content overflows */
-        .sticky-sidebar-container {
-            position: -webkit-sticky; /* For Safari */
-            position: sticky;
-            top: 2rem; /* Equivalent to lg:top-8 */
-            align-self: flex-start;
-             max-height: calc(100vh +200px);
-            min-height: calc(100vh - 4rem); /* Adjust based on your header/footer or desired offset */
-            overflow-y: auto; /* Allows scrolling within this section if content is too long */
-            padding-bottom: 2rem; /* Add some padding at the bottom */
-        }
-
-/* The content that scrolls automatically */
-.logo-scroll-content {
-  display: inline-flex; /* Allows items to flow horizontally with flex properties */
-  white-space: nowrap; /* Prevents items from wrapping */
-  /* Initial animation properties - these will be dynamically controlled by JS */
-  animation: autoScrollLogos var(--scroll-duration, 60s) linear infinite; /* Default duration, can be overridden */
-  animation-play-state: running; /* Start running by default */
-  min-width: max-content; /* Ensure the content takes up enough space */
-  /* gap is now handled by Tailwind's space-x on the parent logo-scroll-content if needed */
+  display: none
 }
 
-/* Keyframe animation for continuous scrolling */
-@keyframes autoScrollLogos {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    /* Scrolls exactly half the total content width.
-       This assumes the .logo-scroll-content HTML is duplicated once. */
-    transform: translateX(-50%);
-  }
+* {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-style: normal
 }
 
-/* Pause animation on hover (CSS fallback, JS will also manage) */
-.logo-scroll-container:hover .logo-scroll-content {
-  animation-play-state: paused;
+.tawk-card .tawk-text-center a {
+  display: none !important
 }
-
-/* Individual logo item styling already using Tailwind, just setting basic display */
-.logo-item {
-  display: inline-flex; /* To center logo image within item */
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* Prevents items from shrinking */
-  /* Tailwind classes like p-4, rounded-md, shadow-sm, hover:shadow-lg, transition, transform, border already handle most of this */
-}
-
-.partner-logo {
-  max-height: 80px; /* Consistent height for logos */
-  width: auto; /* Maintain aspect ratio */
-  object-fit: contain;
-}
-
-/* Responsive adjustments for logo item width/height can be done via Tailwind utilities directly on .logo-item */
-/* Example: <div class="logo-item w-[100px] h-[70px] md:w-[120px] md:h-[80px] lg:w-[140px] lg:h-[96px] ..."> */
 
 @keyframes slideDown {
   from {
@@ -201,25 +81,8 @@ body {
   }
 }
 
-.bg-shadow {
-  background: #000000;
-  background: linear-gradient(3deg, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.2) 68%);
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat
-}
-
-.bg-banner {
-  background-image: url(/assets/images/bannner-1.jpg);
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat
-}
-
 .fade-in {
-  animation: .4s ease-out fadeIn
+  animation: fadeIn .4s ease-out
 }
 
 @keyframes fadeIn {
@@ -234,16 +97,136 @@ body {
   }
 }
 
+.animate-fade-in {
+  animation: fadeIn .4s ease-in-out
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 4px
+}
+
+.logo-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: hidden;
+  position: relative
+}
+
+@media (min-width:768px) {
+  .partner-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem
+  }
+
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+  }
+
+  .partner-card .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column
+  }
+
+  .partner-card .card-description {
+    flex-grow: 1
+  }
+
+  .partner-card .card-footer {
+    margin-top: auto
+  }
+}
+
+.sticky-sidebar-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  max-height: calc(100vh + 200px);
+  min-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding-bottom: 2rem
+}
+
+.logo-scroll-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: autoScrollLogos var(--scroll-duration, 60s) linear infinite;
+  animation-play-state: running;
+  min-width: max-content
+}
+
+@keyframes autoScrollLogos {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(-50%)
+  }
+}
+
+.logo-scroll-container:hover .logo-scroll-content {
+  animation-play-state: paused
+}
+
+.logo-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0
+}
+
+.partner-logo {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain
+}
+
+.bg-shadow {
+  background: #000;
+  background: linear-gradient(3deg, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .2) 68%);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.bg-banner {
+  background-image: url(/assets/images/bannner-1.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
 .bg-premium-section {
   background-image: url(/assets/images/date-treatment-with-copy-space_23-2148551054.jpg);
   height: 100%;
   background-position: center
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-weight: 600
 }
 
@@ -255,15 +238,10 @@ h4 {
   width: 150px;
   height: 80px;
   object-fit: contain;
-
   transition: filter .3s;
   margin-left: auto;
   margin-right: auto
 }
-
-/* .partner-logo:hover {
-  filter: brightness(20%) grayscale(80%)
-} */
 
 .svg-bg {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e11d48' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -290,12 +268,10 @@ button {
   font-weight: 600 !important
 }
 
-
-
 .custom-carousel .custom-slide {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 1rem
 }
 
 .custom-carousel img {
@@ -303,7 +279,7 @@ button {
   height: 350px;
   object-fit: cover;
   border-radius: 3px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
 }
 
 .custom-caption {
@@ -311,12 +287,12 @@ button {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #000000;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 23%, rgba(0, 0, 0, 0.27) 40%);
-  color: white;
+  background: #000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .78) 23%, rgba(0, 0, 0, .27) 40%);
+  color: #fff;
   padding: 1.5rem;
   text-align: center;
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 1rem 1rem
 }
 
 .custom-carousel .owl-nav {
@@ -327,53 +303,46 @@ button {
   justify-content: space-between;
   transform: translateY(-50%);
   pointer-events: none;
-  padding: 0 1rem;
+  padding: 0 1rem
 }
 
-.custom-prev-btn,
-.custom-next-btn {
+.custom-prev-btn, .custom-next-btn {
   background: #E22026;
   border-radius: 9999px;
-  padding: 0.75rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: .75rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, .1);
   pointer-events: auto;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all .3s ease
 }
 
-.custom-prev-btn:hover,
-.custom-next-btn:hover {
+.custom-prev-btn:hover, .custom-next-btn:hover {
   background-color: #74BF44;
-  transform: scale(1.1);
+  transform: scale(1.1)
 }
 
-
-
-.custom-prev-btn svg,
-.custom-next-btn svg {
+.custom-prev-btn svg, .custom-next-btn svg {
   width: 1.5rem;
   height: 1.5rem;
-  color: #fff;
+  color: #fff
 }
 
-.custom-prev-btn:hover svg,
-.custom-next-btn:hover svg {
-  color: white;
+.custom-prev-btn:hover svg, .custom-next-btn:hover svg {
+  color: white
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .custom-carousel img {
-    height: 250px;
+    height: 250px
   }
+
   .custom-caption {
-  padding: 0.5rem;
+    padding: .5rem
+  }
 }
-
-}
-
 
 @media (max-width:768px) {
   .owl-carousel .owl-nav button.owl-prev {
@@ -399,30 +368,21 @@ button {
     top: auto
   }
 
-  .owl-carousel .owl-nav {
-    position: absolute;
-    bottom: 12%;
-    top: auto
-  }
-
   .bg-shadow {
-    background-color: black;
+    background-color: #000;
     background-size: cover;
-    opacity: 0.6;
-
-    background-position: top;
+    opacity: .6;
+    background-position: top
   }
 
   .bg-banner {
     background-size: cover;
     background-position-y: top;
     background-image: url(/assets/images/Mobile-web-banner-min.png);
-
-    background-position: top;
+    background-position: top
   }
 
   .hidden-icon {
-    display: none !important;
+    display: none !important
   }
-
 }

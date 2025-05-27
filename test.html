@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 88px; /* Corrected typo: 8px, assuming this was intended */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px; /* Added for better form layout */
+      width: 90%; /* Added for better form layout */
+    }
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #333;
+      font-size: 1.1em;
+    }
+    .home-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .home-link:hover {
+      background-color: #0056b3;
+    }
+    /* Styles for form elements - These are simulating Tailwind CSS classes */
+    .space-y-4 > div, .space-y-4 textarea, .space-y-4 button {
+      margin-bottom: 1rem; /* Equivalent to space-y-4 */
+    }
+    .flex.flex-col.md\:flex-row.gap-4 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* Equivalent to gap-4 */
+    }
+    @media (min-width: 768px) {
+      .md\:flex-row {
+        flex-direction: row;
+      }
+      .md\:w-1\/2 {
+        width: 50%;
+      }
+    }
+    .w-full {
+      width: 100%;
+    }
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .border {
+      border-width: 1px;
+      border-style: solid;
+    }
+    .border-gray-200 {
+      border-color: #e5e7eb; /* Tailwind gray-200 */
+    }
+    .rounded-md {
+      border-radius: 0.375rem; /* Tailwind rounded-md */
+    }
+    .text-sm {
+      font-size: 0.875rem; /* Tailwind text-sm */
+    }
+    .focus\:ring-2:focus {
+      box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5); /* example ring */
+    }
+    .focus\:ring-green-500:focus {
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.5); /* Tailwind green-500 */
+    }
+    .outline-none:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .bg-\[\#77c047\] {
+      background-color: #77c047; /* Custom green color */
+    }
+    .text-white {
+      color: #fff;
+    }
+    .hover\:bg-green-700:hover {
+      background-color: #15803d; /* Darker green on hover */
+    }
+    .transition {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    .font-medium {
+      font-weight: 500;
+    }
+    .text-base {
+      font-size: 1rem;
+    }
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="multiSubmitForm" class="space-y-4" method="POST">
+        <div class="flex flex-col md:flex-row gap-4">
+            <input
+                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                name="name" pattern="^[A-Za-z\s.'-]+$" placeholder="Full Name" required
+                title="Please enter your full name (letters, spaces, periods, apostrophes, or hyphens only)." />
+            <input
+                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email Address"
+                required type="email" title="Please enter a valid email address (e.g., example@domain.com)." />
+        </div>
+        <div class="flex flex-col md:flex-row gap-4">
+            <input
+                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                name="phone" pattern="^\+\d{1,3}\d{6,14}$" placeholder="WhatsApp Number (with country code)" required
+                type="tel" title="Please enter a valid WhatsApp number, starting with '+' followed by your country code and number (e.g., +919876543210 or +23051234567)." />
+            <input
+                class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                list="countryOptions" name="country" placeholder="Your Country (Type to search)" required
+                value="Mauritius" />
+            <datalist id="countryOptions">
+                <option value="Mauritius"></option>
+                <option value="Reunion"></option>
+                <option value="Madagascar"></option>
+                <option value="Seychelles"></option>
+                <option value="Comoros"></option>
+                <option value="United States"></option>
+                <option value="Canada"></option>
+                <option value="United Kingdom"></option>
+                <option value="Australia"></option>
+                <option value="India"></option>
+                <option value="South Africa"></option>
+                <option value="Germany"></option>
+                <option value="France"></option>
+                <option value="Brazil"></option>
+                <option value="Japan"></option>
+                <option value="China"></option>
+                <option value="Mexico"></option>
+                <option value="Spain"></option>
+                <option value="Italy"></option>
+                <option value="Netherlands"></option>
+            </datalist>
+        </div>
+        <textarea
+            class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+            name="message" placeholder="Describe your health issue..." required rows="4"></textarea>
+        <button aria-label="Send Request"
+            class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base"
+            type="submit">
+            <i aria-hidden="true" class="fas fa-paper-plane mr-2"></i> Send Request
+        </button>
+    </form>
+    <a href="https://www.mauritius.medivisorindiatreatment.com/" class="home-link">Go to Homepage</a>
+  </div>
+
+  <script>
+    document.getElementById('multiSubmitForm').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // --- 1. Send to Google Sheets (via Google Apps Script) ---
+      // IMPORTANT: Replace this URL with YOUR deployed Google Apps Script Web App URL
+      const googleSheetUrl = 'https://script.google.com/macros/s/AKfycbyrUTteDz5fvhHgGHBoeCgoCRgi3UHBz9B3xpRdXt7gxX0xAYjxpeshSOTVnmeqJUBX/exec';
+      try {
+        const googleSheetResponse = await fetch(googleSheetUrl, {
+          method: 'POST',
+          body: formData
+        });
+        if (!googleSheetResponse.ok) {
+          console.error('Google Sheet API response not OK:', googleSheetResponse.statusText);
+          // You might want to add a user-facing alert here for Google Sheet submission issues
+        } else {
+          console.log('Data sent to Google Sheet successfully!');
+        }
+      } catch (error) {
+        console.error('Error sending data to Google Sheet:', error);
+        // You might want to add a user-facing alert here for Google Sheet submission issues
+      }
+
+      // --- 2. Send to Web3Forms ---
+      const web3FormsUrl = 'https://api.web3forms.com/submit';
+      // Create a separate FormData for Web3Forms to ensure it has all required fields including hidden ones
+      const web3formsFormData = new FormData(form);
+      // IMPORTANT: Replace with YOUR Web3Forms Access Key
+      web3formsFormData.append('access_key', '633d9e7c-a834-4e17-85b5-6254683066a9');
+      // IMPORTANT: Ensure this redirect URL is correct for your thank you page
+      web3formsFormData.append('redirect', 'https://www.mauritius.medivisorindiatreatment.com/thank-you.html');
+      web3formsFormData.append('botcheck', ''); // Web3Forms botcheck hidden input
+
+      try {
+        const web3FormsResponse = await fetch(web3FormsUrl, {
+          method: 'POST',
+          body: web3formsFormData
+        });
+        const result = await web3FormsResponse.json(); // Always attempt to parse JSON for Web3Forms response
+
+        if (result.success) {
+          console.log('Data sent to Web3Forms successfully!');
+          // --- 3. Redirect to Thank You Page only after successful Web3Forms submission ---
+          window.location.href = 'https://www.mauritius.medivisorindiatreatment.com/thank-you.html';
+        } else {
+          console.error('Error sending data to Web3Forms:', result.message || 'Unknown error');
+          // Display the alert if Web3Forms explicitly returns success: false
+          alert('There was an issue submitting your request via Web3Forms: ' + (result.message || 'Please try again.'));
+        }
+      } catch (error) {
+        console.error('Error sending data to Web3Forms:', error);
+        // Display the alert for network errors or issues parsing Web3Forms response
+        alert('There was a network issue submitting your request. Please check your internet connection and try again.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,74 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        /* Optional: Add any custom CSS here */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .loading {
+      display: none;
+    }
+
+    .success-message,
+    .error-message {
+      display: none;
+    }
+
+    .field-error {
+      color: #ef4444;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .input-error {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 1px #ef4444 !important;
+    }
+
+    .whatsapp-hint {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+  </style>
 </head>
+
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Get in Touch</h2>
-        <form action="AKfycbwsyFs_JOUMbXTRi2fTgQVa44RhAkbLyI24-q-I4M-KXVi1KsbV94vT5RhKZKxIkH-K" class="space-y-4" method="POST">
-            <input name="redirect" type="hidden" value="/ThankYou.html" />
-            
-            <div class="flex flex-col md:flex-row gap-4">
-                <input
-                    class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
-                    name="name" pattern="^[A-Za-z\s.'-]+$" placeholder="Full Name" required=""
-                    title="Please enter your full name (letters, spaces, periods, apostrophes, or hyphens only)." />
-                <input
-                    class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
-                    name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email Address"
-                    required="" title="Please enter a valid email address (e.g., example@domain.com)." type="email" />
-            </div>
-            <div class="flex flex-col md:flex-row gap-4">
-                <input
-                    class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
-                    name="phone" pattern="^\+\d{1,3}\d{6,14}$" placeholder="WhatsApp Number (with country code)" required=""
-                    title="Please enter a valid WhatsApp number, starting with '+' followed by your country code and number (e.g., +919876543210 or +23051234567)."
-                    type="tel" />
-                <input
-                    class="w-full md:w-1/2 px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
-                    list="countryOptions" name="country" placeholder="Your Country (Type to search)" required=""
-                    value="Mauritius" />
-                <datalist id="countryOptions">
-                    <option value="Mauritius"></option>
-                    <option value="Reunion"></option>
-                    <option value="Madagascar"></option>
-                    <option value="Seychelles"></option>
-                    <option value="Comoros"></option>
-                    <option value="United States"></option>
-                    <option value="Canada"></option>
-                    <option value="United Kingdom"></option>
-                    <option value="Australia"></option>
-                    <option value="India"></option>
-                    <option value="South Africa"></option>
-                    <option value="Germany"></option>
-                    <option value="France"></option>
-                    <option value="Brazil"></option>
-                    <option value="Japan"></option>
-                    <option value="China"></option>
-                    <option value="Mexico"></option>
-                    <option value="Spain"></option>
-                    <option value="Italy"></option>
-                    <option value="Netherlands"></option>
-                </datalist>
-            </div>
-            <textarea
-                class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
-                name="message" placeholder="Describe your health issue..." required="" rows="4"></textarea>
-            
-            <button aria-label="Send Request"
-                class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base"
-                type="submit">
-                <i aria-hidden="true" class="fas fa-paper-plane mr-2"></i> Send Request
-            </button>
-        </form>
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Get in Touch</h2>
+
+    <!-- Success Message -->
+    <div id="successMessage"
+      class="success-message bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+      <i class="fas fa-check-circle mr-2"></i>
+      <span id="successText">Thank you! Your message has been sent successfully.</span>
     </div>
+
+    <!-- Error Message -->
+    <div id="errorMessage" class="error-message bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      <i class="fas fa-exclamation-circle mr-2"></i>
+      <span id="errorText">Sorry, there was an error sending your message. Please try again.</span>
+    </div>
+
+    <form id="contactForm" class="space-y-4" novalidate>
+      <!-- Name Field -->
+      <div>
+        <input id="name"
+          class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+          name="name" placeholder="Full Name *" required minlength="2" maxlength="50" />
+        <div id="nameError" class="field-error">Please enter your full name (2-50 characters, letters only)</div>
+      </div>
+
+      <!-- Email Field -->
+      <div>
+        <input id="email"
+          class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+          name="email" placeholder="Email Address *" required type="email" />
+        <div id="emailError" class="field-error">Please enter a valid email address</div>
+      </div>
+
+      <!-- Phone and Country Row -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <!-- Phone Field -->
+        <div class="w-full md:w-1/2">
+          <input id="phone"
+            class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+            name="phone" placeholder="WhatsApp Number *" required type="tel" />
+          <div class="whatsapp-hint">
+            <i class="fab fa-whatsapp text-green-500 mr-1"></i>
+            Include country code (e.g., +1234567890)
+          </div>
+          <div id="phoneError" class="field-error">Please enter a valid WhatsApp number with country code</div>
+        </div>
+
+        <!-- Country Field -->
+        <div class="w-full md:w-1/2">
+          <input id="country"
+            class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+            list="countryOptions" name="country" placeholder="Your Country *" required value="Mauritius" />
+          <datalist id="countryOptions">
+            <option value="Mauritius"></option>
+            <option value="Reunion"></option>
+            <option value="Madagascar"></option>
+            <option value="Seychelles"></option>
+            <option value="Comoros"></option>
+            <option value="United States"></option>
+            <option value="Canada"></option>
+            <option value="United Kingdom"></option>
+            <option value="Australia"></option>
+            <option value="India"></option>
+            <option value="South Africa"></option>
+            <option value="Germany"></option>
+            <option value="France"></option>
+            <option value="Brazil"></option>
+            <option value="Japan"></option>
+            <option value="China"></option>
+            <option value="Mexico"></option>
+            <option value="Spain"></option>
+            <option value="Italy"></option>
+            <option value="Netherlands"></option>
+            <option value="Nigeria"></option>
+            <option value="Kenya"></option>
+            <option value="Ghana"></option>
+            <option value="Egypt"></option>
+            <option value="Morocco"></option>
+            <option value="Pakistan"></option>
+            <option value="Bangladesh"></option>
+            <option value="Philippines"></option>
+            <option value="Thailand"></option>
+            <option value="Vietnam"></option>
+          </datalist>
+          <div id="countryError" class="field-error">Please select your country</div>
+        </div>
+      </div>
+
+      <!-- Message Field -->
+      <div>
+        <textarea id="message"
+          class="w-full px-4 py-2 border border-gray-200 rounded-md text-sm focus:ring-2 focus:ring-green-500 outline-none"
+          name="message" placeholder="Describe your health issue... *" required rows="4" minlength="10"
+          maxlength="500"></textarea>
+        <div class="text-xs text-gray-500 mt-1">
+          <span id="charCount">0</span>/500 characters
+        </div>
+        <div id="messageError" class="field-error">Please enter your message (10-500 characters)</div>
+      </div>
+
+      <button id="submitBtn" aria-label="Send Request"
+        class="w-full px-4 py-2 bg-[#77c047] text-white rounded-md hover:bg-green-700 transition font-medium text-base disabled:opacity-50 disabled:cursor-not-allowed"
+        type="submit">
+        <span id="btnText">
+          <i aria-hidden="true" class="fas fa-paper-plane mr-2"></i> Send Request
+        </span>
+        <span id="loadingText" class="loading">
+          <i aria-hidden="true" class="fas fa-spinner fa-spin mr-2"></i> Sending...
+        </span>
+      </button>
+    </form>
+
+    <!-- Debug Info (remove in production) -->
+    <div id="debugInfo" class="mt-4 p-3 bg-gray-100 rounded text-xs text-gray-600" style="display: none;">
+      <strong>Debug Info:</strong>
+      <div id="debugContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // Replace this URL with your Google Apps Script Web App URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycsFKrMa-6qWvrMrAnM0qPpOgdylwaW6lHTAzPgcQyHWUgk7YZzhB6wHgBldEdmswc/exec';
+
+    // Enable debug mode (set to false in production)
+    const DEBUG_MODE = true;
+
+    // Form validation patterns
+    const validationPatterns = {
+      name: /^[a-zA-Z\s.'-]{2,50}$/,
+      email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      phone: /^\+[1-9]\d{1,14}$/, // International format: +1234567890 (1-15 digits total)
+      country: /^[a-zA-Z\s]{2,50}$/,
+      message: /^.{10,500}$/s
+    };
+
+    // Get form elements
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const loadingText = document.getElementById('loadingText');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const debugInfo = document.getElementById('debugInfo');
+    const debugContent = document.getElementById('debugContent');
+
+    // Character counter for message
+    const messageField = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+
+    messageField.addEventListener('input', function () {
+      charCount.textContent = this.value.length;
+    });
+
+    // Real-time validation
+    function validateField(fieldId, pattern, errorId) {
+      const field = document.getElementById(fieldId);
+      const error = document.getElementById(errorId);
+      const value = field.value.trim();
+
+      if (!value || !pattern.test(value)) {
+        field.classList.add('input-error');
+        error.style.display = 'block';
+        return false;
+      } else {
+        field.classList.remove('input-error');
+        error.style.display = 'none';
+        return true;
+      }
+    }
+
+    // Add real-time validation listeners
+    document.getElementById('name').addEventListener('blur', () =>
+      validateField('name', validationPatterns.name, 'nameError'));
+
+    document.getElementById('email').addEventListener('blur', () =>
+      validateField('email', validationPatterns.email, 'emailError'));
+
+    document.getElementById('phone').addEventListener('blur', () =>
+      validateField('phone', validationPatterns.phone, 'phoneError'));
+
+    document.getElementById('country').addEventListener('blur', () =>
+      validateField('country', validationPatterns.country, 'countryError'));
+
+    document.getElementById('message').addEventListener('blur', () =>
+      validateField('message', validationPatterns.message, 'messageError'));
+
+    // Phone number formatting helper
+    document.getElementById('phone').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/[^\d+]/g, '');
+      if (value && !value.startsWith('+')) {
+        value = '+' + value;
+      }
+      e.target.value = value;
+    });
+
+    // Debug function
+    function debugLog(message, data = null) {
+      if (DEBUG_MODE) {
+        console.log(message, data);
+        const timestamp = new Date().toLocaleTimeString();
+        debugContent.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+        if (data) {
+          debugContent.innerHTML += `<div style="margin-left: 10px; color: #666;">${JSON.stringify(data, null, 2)}</div>`;
+        }
+        debugInfo.style.display = 'block';
+      }
+    }
+
+    // Form submission
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      debugLog('Form submission started');
+
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      // Validate all fields
+      const isNameValid = validateField('name', validationPatterns.name, 'nameError');
+      const isEmailValid = validateField('email', validationPatterns.email, 'emailError');
+      const isPhoneValid = validateField('phone', validationPatterns.phone, 'phoneError');
+      const isCountryValid = validateField('country', validationPatterns.country, 'countryError');
+      const isMessageValid = validateField('message', validationPatterns.message, 'messageError');
+
+      if (!isNameValid || !isEmailValid || !isPhoneValid || !isCountryValid || !isMessageValid) {
+        debugLog('Form validation failed');
+        document.getElementById('errorText').textContent = 'Please fix the errors above and try again.';
+        errorMessage.style.display = 'block';
+        errorMessage.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      // Show loading state
+      btnText.style.display = 'none';
+      loadingText.style.display = 'inline';
+      submitBtn.disabled = true;
+
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      debugLog('Form data collected', data);
+
+      // Check if script URL is configured
+      if (SCRIPT_URL.includes('YOUR_SCRIPT_ID')) {
+        debugLog('Script URL not configured');
+        document.getElementById('errorText').textContent = 'Form is not properly configured. Please contact the administrator.';
+        errorMessage.style.display = 'block';
+        resetButtonState();
+        return;
+      }
+
+      try {
+        debugLog('Sending request to:', SCRIPT_URL);
+
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+
+        debugLog('Request sent successfully');
+
+        // Since mode is 'no-cors', we can't read the response
+        // We'll assume success if no error was thrown
+        successMessage.style.display = 'block';
+        form.reset();
+        charCount.textContent = '0';
+
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+
+        debugLog('Form submitted successfully');
+
+      } catch (error) {
+        debugLog('Error occurred:', error);
+        console.error('Error:', error);
+        document.getElementById('errorText').textContent = 'Network error. Please check your connection and try again.';
+        errorMessage.style.display = 'block';
+        errorMessage.scrollIntoView({ behavior: 'smooth' });
+      } finally {
+        resetButtonState();
+      }
+    });
+
+    function resetButtonState() {
+      btnText.style.display = 'inline';
+      loadingText.style.display = 'none';
+      submitBtn.disabled = false;
+    }
+
+    // Initialize
+    debugLog('Contact form initialized');
+  </script>
 </body>
+
 </html>

@@ -2369,7 +2369,7 @@
         debugLog('Request sent successfully', null, formPrefix);
 
         // Redirect to thank you page on success
-        window.location.href = thankyou.html;
+        window.location.href = THANK_YOU_PAGE_URL;
 
       } catch (error) {
         debugLog('Error occurred:', error, formPrefix);
@@ -2380,7 +2380,7 @@
       } finally {
         // Reset button state only if there was an error (no redirect)
         // If redirect happens, this code won't be reached.
-        if (window.location.href !== thankyou.html) {
+        if (window.location.href !== THANK_YOU_PAGE_URL) {
             resetButtonState(formPrefix);
         }
       }
